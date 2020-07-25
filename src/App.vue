@@ -1,16 +1,33 @@
 <template>
   <div id="app">
-    <Home />
+    <button @click="toggle">Home / Todos</button>
+    <div v-if="isHome">
+      <Home />
+    </div>
+    <div v-else>
+      <Todos />
+    </div>
   </div>
 </template>
 
 <script>
 import Home from '@/components/Home'
+import Todos from '@/components/Todos'
 
 export default {
   name: 'App',
   components: {
-    Home
+    Home, Todos
+  },
+  data () {
+    return {
+      isHome: true
+    }
+  },
+  methods: {
+    toggle () {
+      this.isHome = !this.isHome
+    }
   }
 }
 </script>
