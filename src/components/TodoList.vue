@@ -11,14 +11,14 @@
 </template>
 
 <script>
-  import TodoItem from '@/components/TodoItem'
+import TodoItem from '@/components/TodoItem'
 
-  export default {
-    props: ['todos'],
-    components: {
-      TodoItem
-    }
+export default {
+  props: ['todos'],
+  components: {
+    TodoItem
   }
+}
 </script>
 
 <style scoped>

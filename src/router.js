@@ -6,15 +6,14 @@ import Todos from '@/views/Todos'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
-    routes: [
-        {
-            path: '/',
-            component: Home
-        },
-        {
-            path: '/todos',
-            component: Todos
-        }
-    ]
+  mode: 'history',
+  routes: [{
+      path: '/',
+      component: Home
+    },
+    {
+      path: '/todos',
+      component: Todos
+    }
+  ]
 })

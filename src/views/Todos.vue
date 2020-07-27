@@ -12,40 +12,40 @@
 </template>
 
 <script>
-  import TodoList from '@/components/TodoList'
-  import AddTodo from '@/components/AddTodo'
+import TodoList from '@/components/TodoList'
+import AddTodo from '@/components/AddTodo'
 
-  export default {
-    data() {
-      return {
-        todos: [{
-            id: 1,
-            title: 'Learn Vue.js',
-            completed: false
-          },
-          {
-            id: 2,
-            title: 'Think of your own project',
-            completed: false
-          },
-          {
-            id: 3,
-            title: 'Do it',
-            completed: false
-          }
-        ]
-      }
+export default {
+  data() {
+    return {
+      todos: [{
+          id: 1,
+          title: 'Learn Vue.js',
+          completed: false
+        },
+        {
+          id: 2,
+          title: 'Think of your own project',
+          completed: false
+        },
+        {
+          id: 3,
+          title: 'Do it',
+          completed: false
+        }
+      ]
+    }
+  },
+  components: {
+    TodoList, AddTodo
+  },
+  methods: {
+    removeTodo (id) {
+      this.todos = this.todos.filter(t => t.id !== id)
     },
-    components: {
-      TodoList, AddTodo
-    },
-    methods: {
-      removeTodo (id) {
-        this.todos = this.todos.filter(t => t.id !== id)
-      },
-      addTodo (newTodo) {
-        this.todos.push(newTodo)
-      }
+    addTodo (newTodo) {
+      this.todos.push(newTodo)
     }
   }
+}
 </script>
