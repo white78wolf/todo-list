@@ -5,7 +5,7 @@
       <strong>{{index + 1}}.</strong>
       {{todo.title}}
     </span>
-    <button>&times;</button>
+    <button @click="$emit('remove-item', todo.id)">&times;</button>
   </li>
 </template>
 
