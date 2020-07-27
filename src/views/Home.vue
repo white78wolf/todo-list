@@ -7,3 +7,10 @@
     <router-link to="/todos">Todos</router-link>
   </div>
 </template>
+
+<style scoped>
+p {
+  margin: 0 auto;
+  max-width: 600px;
+}
+</style>
