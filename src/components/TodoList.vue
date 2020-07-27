@@ -1,7 +1,7 @@
 <template>
   <ul>
     <TodoItem
-      v-for="todo of todos"
+      v-for="(todo, idx) of todos"
       :todo="todo"
       :key="todo.id"
       :index="idx"

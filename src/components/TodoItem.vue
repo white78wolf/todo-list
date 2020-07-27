@@ -2,7 +2,7 @@
   <li>
     <span>
       <input type="checkbox">
-      <strong>{{todo.id}}.</strong>
+      <strong>{{index + 1}}.</strong>
       {{todo.title}}
     </span>
     <button>&times;</button>
