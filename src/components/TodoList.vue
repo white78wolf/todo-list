@@ -5,12 +5,14 @@
       :todo="todo"
       :key="todo.id"
       :index="idx"
+      @remove-item="removeTodo"
     />
   </ul>
 </template>
 
 <script>
   import TodoItem from '@/components/TodoItem'
+
   export default {
     data() {
       return {
@@ -34,6 +36,11 @@
     },
     components: {
       TodoItem
+    },
+    methods: {
+      removeTodo (id) {
+        this.todos = this.todos.filter(t => t.id !== id)
+      }
     }
   }
 </script>
