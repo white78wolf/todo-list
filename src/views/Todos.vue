@@ -3,6 +3,7 @@
     <h1>Todo App - Todos</h1>
     <router-link to="/">Home</router-link>
     <hr>
+    <AddTodo @add-todo="addTodo" />
     <TodoList
       :todos="todos"
       @remove-todo="removeTodo"
@@ -12,6 +13,7 @@
 
 <script>
   import TodoList from '@/components/TodoList'
+  import AddTodo from '@/components/AddTodo'
 
   export default {
     data() {
@@ -35,11 +37,14 @@
       }
     },
     components: {
-      TodoList
+      TodoList, AddTodo
     },
     methods: {
       removeTodo (id) {
         this.todos = this.todos.filter(t => t.id !== id)
+      },
+      addTodo (newTodo) {
+        this.todos.push(newTodo)
       }
     }
   }
