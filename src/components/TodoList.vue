@@ -5,7 +5,7 @@
       :todo="todo"
       :key="todo.id"
       :index="idx"
-      @remove-item="removeTodo"
+      @remove-item="$emit('remove-todo', todo.id)"
     />
   </ul>
 </template>
@@ -14,33 +14,9 @@
   import TodoItem from '@/components/TodoItem'
 
   export default {
-    data() {
-      return {
-        todos: [{
-            id: 1,
-            title: 'Learn Vue.js',
-            completed: false
-          },
-          {
-            id: 2,
-            title: 'Think of your own project',
-            completed: false
-          },
-          {
-            id: 3,
-            title: 'Do it',
-            completed: false
-          }
-        ]
-      }
-    },
+    props: ['todos'],
     components: {
       TodoItem
-    },
-    methods: {
-      removeTodo (id) {
-        this.todos = this.todos.filter(t => t.id !== id)
-      }
     }
   }
 </script>
