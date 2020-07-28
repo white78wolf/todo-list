@@ -29,4 +29,7 @@ li {
   padding: .5rem 2rem;
   margin-bottom: 1rem;
 }
+input {
+  margin-right: 1rem;
+}
 </style>

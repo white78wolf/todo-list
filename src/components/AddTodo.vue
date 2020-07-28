@@ -30,12 +30,12 @@ export default {
 
 <style scoped>
 form {
-  max-width: 600px;
-  margin: 0 auto 1rem auto;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
 }
 form input {
   width: 100%;
+  margin-right: 10px;
 }
 </style>

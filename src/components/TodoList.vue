@@ -24,8 +24,6 @@ export default {
 <style scoped>
   ul {
     list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    max-width: 600px;
+    padding-left: 0;
   }
 </style>
