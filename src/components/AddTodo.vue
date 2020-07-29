@@ -1,11 +1,19 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <input type="text" v-model="title">
-    <button type="submit">Add new task</button>
+    <input
+      type="text"
+      v-model="title"
+    >
+    <button
+      type="submit"
+      class="add-button"
+    ><plus-circle-icon /></button>
   </form>
 </template>
 
 <script>
+import PlusCircleIcon from 'vue-material-design-icons/PlusCircle.vue'
+
 export default {
   data () {
     return {
@@ -22,8 +30,12 @@ export default {
         }
         this.$emit('add-todo', newTodo)
         this.title = ""
+        document.getElementsByTagName('input')[0].focus()
       }
     }
+  },
+  components: {
+    PlusCircleIcon
   }
 }
 </script>
@@ -37,5 +49,10 @@ form {
 form input {
   width: 100%;
   margin-right: 10px;
+  padding-left: 1rem;
+}
+.add-button {
+  color: #444;
+  width: 8rem;
 }
 </style>
