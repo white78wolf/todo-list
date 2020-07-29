@@ -5,7 +5,12 @@
     <hr>
     <AddTodo @add-todo="addTodo" />
     <TodoList
-      :todos="todos"
+      :todos="unfinishedTodos"
+      @remove-todo="removeTodo"
+    />
+    <hr>
+    <TodoList
+      :todos="completedTodos"
       @remove-todo="removeTodo"
     />
   </div>
@@ -21,7 +26,7 @@ export default {
       todos: [{
           id: 1,
           title: 'Learn Vue.js',
-          completed: false
+          completed: true
         },
         {
           id: 2,
@@ -45,6 +50,14 @@ export default {
     },
     addTodo (newTodo) {
       this.todos.push(newTodo)
+    }
+  },
+  computed: {
+    completedTodos () {
+      return this.todos.filter(t => t.completed)
+    },
+    unfinishedTodos () {
+      return this.todos.filter(t => !t.completed)
     }
   }
 }
