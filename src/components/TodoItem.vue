@@ -1,8 +1,11 @@
 <template>
   <li>
     <span :class="{ completed: todo.completed }">
-      <input type="checkbox" :checked="todo.completed">
-      <strong>{{index + 1}}.</strong>
+      <input
+        type="checkbox"
+        :checked="todo.completed"
+        @change="todo.completed = !todo.completed"
+      >
       {{todo.title}}
     </span>
     <button @click="$emit('remove-item', todo.id)">&times;</button>
