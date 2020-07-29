@@ -1,7 +1,7 @@
 <template>
   <li>
     <span :class="{ completed: todo.completed }">
-      <input type="checkbox">
+      <input type="checkbox" :checked="todo.completed">
       <strong>{{index + 1}}.</strong>
       {{todo.title}}
     </span>
