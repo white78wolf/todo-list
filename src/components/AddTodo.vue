@@ -54,5 +54,6 @@ form input {
 .add-button {
   color: #444;
   width: 8rem;
+  cursor: pointer;
 }
 </style>
