@@ -1,17 +1,20 @@
 <template>
   <li>
-    <span :class="{ completed: todo.completed }" class="checkbox-and-title">
-      <CheckboxBlankOutlineIcon
+    <span
+      :class="{ completed: todo.completed }"
+      class="checkbox-and-title"
+    >
+      <checkbox-blank-outline-icon
         v-if="!todo.completed"
         @click="todo.completed = !todo.completed"
         class="checkbox"
       />
-      <CheckboxMarkedOutline
+      <checkbox-marked-outline-icon
         v-else
         @click="todo.completed = !todo.completed"
         class="checkbox"
       />
-      <span class="todo-title">{{todo.title}}</span>
+      {{todo.title}}
     </span>
     <button
       @click="$emit('remove-item', todo.id)"
@@ -23,7 +26,7 @@
 <script>
 import DeleteIcon from 'vue-material-design-icons/Delete.vue'
 import CheckboxBlankOutlineIcon from 'vue-material-design-icons/CheckboxBlankOutline.vue'
-import CheckboxMarkedOutline from 'vue-material-design-icons/CheckboxMarkedOutline.vue'
+import CheckboxMarkedOutlineIcon from 'vue-material-design-icons/CheckboxMarkedOutline.vue'
 
 export default {
   props: {
@@ -36,7 +39,7 @@ export default {
   components: {
     DeleteIcon,
     CheckboxBlankOutlineIcon,
-    CheckboxMarkedOutline
+    CheckboxMarkedOutlineIcon
   }
 }
 </script>
