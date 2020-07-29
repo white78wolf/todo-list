@@ -9,14 +9,14 @@
       :todos="unfinishedTodos"
       @remove-todo="removeTodo"
     />
-    <p v-else>There's nothing to do now</p>
+    <p v-else>Nothing to do yet</p>
     <hr>
     <TodoList
       v-if="completedTodos.length"
       :todos="completedTodos"
       @remove-todo="removeTodo"
     />
-    <p v-else>A journey of a thousand miles begins with a single step</p>
+    <p v-else-if="unfinishedTodos.length">A journey of a thousand miles begins with a single step</p>
   </div>
 </template>
 
