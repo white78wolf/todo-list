@@ -1,6 +1,6 @@
 <template>
   <li>
-    <span>
+    <span :class="{ completed: todo.completed }">
       <input type="checkbox">
       <strong>{{index + 1}}.</strong>
       {{todo.title}}
@@ -31,5 +31,9 @@ li {
 }
 input {
   margin-right: 1rem;
+}
+.completed {
+  text-decoration: line-through;
+  color: #777;
 }
 </style>
