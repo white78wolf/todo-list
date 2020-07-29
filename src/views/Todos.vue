@@ -5,14 +5,18 @@
     <hr>
     <AddTodo @add-todo="addTodo" />
     <TodoList
+      v-if="unfinishedTodos.length"
       :todos="unfinishedTodos"
       @remove-todo="removeTodo"
     />
+    <p v-else>There's nothing to do now</p>
     <hr>
     <TodoList
+      v-if="completedTodos.length"
       :todos="completedTodos"
       @remove-todo="removeTodo"
     />
+    <p v-else>A journey of a thousand miles begins with a single step</p>
   </div>
 </template>
 
@@ -26,7 +30,7 @@ export default {
       todos: [{
           id: 1,
           title: 'Learn Vue.js',
-          completed: true
+          completed: false
         },
         {
           id: 2,
