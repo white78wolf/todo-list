@@ -4,22 +4,30 @@
       :class="{ completed: todo.completed }"
       class="checkbox-and-title"
     >
-      <checkbox-blank-outline-icon
+      <button
         v-if="!todo.completed"
         @click="todo.completed = !todo.completed"
         class="checkbox"
-      />
-      <checkbox-marked-outline-icon
+      >
+        <checkbox-blank-outline-icon />
+      </button>
+
+      <button
         v-else
         @click="todo.completed = !todo.completed"
         class="checkbox"
-      />
+      >
+        <checkbox-marked-outline-icon />
+      </button>
       {{todo.title}}
     </span>
+
     <button
       @click="$emit('remove-item', todo.id)"
       class="delete-button"
-    ><delete-icon title="Delete the task"/></button>
+    >
+      <delete-icon title="Delete the task"/>
+    </button>
   </li>
 </template>
 
@@ -64,10 +72,12 @@ input {
   margin-right: 1rem;
   color: #444;
   cursor: pointer;
+  border: none;
+  background-color: #fff;
 }
-.checkbox:active {
-  border: 2px solid #444;
+.checkbox:hover {
   border-radius: 5px;
+  background-color: #ccc;
 }
 .completed {
   text-decoration: line-through;
@@ -78,5 +88,9 @@ input {
   background-color: #fff;
   color: #444;
   cursor: pointer;
+}
+.delete-button:hover {
+  background-color: #ccc;
+  border-radius: 5px;
 }
 </style>
