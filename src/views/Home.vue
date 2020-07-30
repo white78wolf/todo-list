@@ -20,7 +20,7 @@ a:visited {
 .anchor-button {
   font-size: 1.5rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #eee;
   width: 7rem;
   height: 3rem;
@@ -28,5 +28,8 @@ a:visited {
 .anchor-button:hover {
   cursor: pointer;
   background: #ccc;
+}
+.anchor-button:focus {
+  outline: none;
 }
 </style>
