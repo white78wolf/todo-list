@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Todo App - Todos</h1>
-    <router-link to="/">Home</router-link>
+    <button class="anchor-button">
+      <router-link to="/">Home</router-link>
+    </button>
     <hr>
     <AddTodo @add-todo="addTodo" />
     <TodoList
@@ -66,3 +68,24 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #444;
+}
+.anchor-button {
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #eee;
+  width: 6rem;
+  height: 2rem;
+}
+.anchor-button:hover {
+  cursor: pointer;
+  background: #ccc;
+}
+</style>
