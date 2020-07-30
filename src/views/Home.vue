@@ -15,7 +15,7 @@ a {
   text-decoration: none;
 }
 a:visited {
-  color: #444;
+  color: #777;
 }
 .anchor-button {
   font-size: 1.5rem;
