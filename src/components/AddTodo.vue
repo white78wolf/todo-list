@@ -50,6 +50,8 @@ form input {
   width: 100%;
   margin-right: 10px;
   padding-left: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 .add-button {
   color: #444;
