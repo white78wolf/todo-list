@@ -91,4 +91,10 @@ a:visited {
 .anchor-button:focus {
   outline: none;
 }
+hr {
+  border: none; /* Firefox */
+  color: #ccc; /* color of line for another browsers */
+  background-color: #ccc; /* color of line for Firefox and Opera */
+  height: 1px; /* thickness of line */
+}
 </style>
