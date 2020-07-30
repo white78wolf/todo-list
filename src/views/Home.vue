@@ -4,9 +4,9 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid quod eaque veniam possimus amet magni
       deleniti, corrupti excepturi nostrum perspiciatis sit et eveniet quos molestias tenetur ipsum iusto odit?</p>
     <hr>
-    <button class="anchor-button">
-      <router-link to="/todos">Todos</router-link>
-    </button>
+    <router-link to="/todos">
+      <button class="anchor-button">Todos</button>
+    </router-link>
   </div>
 </template>
 
