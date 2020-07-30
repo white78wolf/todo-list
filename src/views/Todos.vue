@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Todo App - Todos</h1>
-    <button class="anchor-button">
-      <router-link to="/">Home</router-link>
-    </button>
+    <router-link to="/">
+      <button class="anchor-button">Home</button>
+    </router-link>
     <hr>
     <AddTodo @add-todo="addTodo" />
     <TodoList
@@ -79,7 +79,7 @@ a:visited {
 .anchor-button {
   font-size: 1.2rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #eee;
   width: 6rem;
   height: 2rem;
@@ -87,5 +87,8 @@ a:visited {
 .anchor-button:hover {
   cursor: pointer;
   background: #ccc;
+}
+.anchor-button:focus {
+  outline: none;
 }
 </style>
