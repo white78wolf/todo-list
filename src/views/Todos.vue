@@ -29,22 +29,7 @@ import AddTodo from '@/components/AddTodo'
 export default {
   data() {
     return {
-      todos: [{
-          id: 1,
-          title: 'Learn Vue.js',
-          completed: false
-        },
-        {
-          id: 2,
-          title: 'Think of your own project',
-          completed: false
-        },
-        {
-          id: 3,
-          title: 'Do it',
-          completed: false
-        }
-      ]
+      todos: []
     }
   },
   components: {
@@ -56,6 +41,13 @@ export default {
     },
     addTodo (newTodo) {
       this.todos.push(newTodo)
+    },
+    saveTodos () {
+      localStorage.removeItem('todos')
+      localStorage.setItem('todos', JSON.stringify(this.todos))
+    },
+    loadTodos () {
+      return JSON.parse(localStorage.getItem('todos'))
     }
   },
   computed: {
@@ -65,6 +57,12 @@ export default {
     unfinishedTodos () {
       return this.todos.filter(t => !t.completed)
     }
+  },
+  mounted () {
+    this.todos = this.loadTodos()
+  },
+  updated () {
+    this.saveTodos()
   }
 }
 </script>
