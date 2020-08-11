@@ -59,7 +59,8 @@ export default {
     }
   },
   mounted () {
-    this.todos = this.loadTodos()
+    if (this.loadTodos())
+      this.todos = this.loadTodos()
   },
   updated () {
     this.saveTodos()
