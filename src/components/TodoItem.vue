@@ -6,7 +6,7 @@
     >
       <button
         v-if="!todo.completed"
-        @click="todo.completed = !todo.completed"
+        @click="$emit('change-status', todo.id)"
         class="checkbox"
       >
         <checkbox-blank-outline-icon />
@@ -14,7 +14,7 @@
 
       <button
         v-else
-        @click="todo.completed = !todo.completed"
+        @click="$emit('change-status', todo.id)"
         class="checkbox"
       >
         <checkbox-marked-outline-icon />
