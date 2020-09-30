@@ -10,6 +10,7 @@
       v-if="unfinishedTodos.length"
       :todos="unfinishedTodos"
       @remove-todo="removeTodo"
+      @change-status="changeStatus"
     />
     <p v-else>Nothing to do yet</p>
     <hr>
@@ -17,6 +18,7 @@
       v-if="completedTodos.length"
       :todos="completedTodos"
       @remove-todo="removeTodo"
+      @change-status="changeStatus"
     />
     <p v-else-if="unfinishedTodos.length">A journey of a thousand miles begins with a single step</p>
   </div>
@@ -25,6 +27,7 @@
 <script>
 import TodoList from '@/components/TodoList'
 import AddTodo from '@/components/AddTodo'
+import api from '@/api/idb'
 
 export default {
   data() {
@@ -37,17 +40,18 @@ export default {
   },
   methods: {
     removeTodo (id) {
-      this.todos = this.todos.filter(t => t.id !== id)
+      api.deleteTodo(this.todos.find(t => t.id == id))
     },
     addTodo (newTodo) {
-      this.todos.push(newTodo)
+      api.saveTodo(newTodo)
     },
-    saveTodos () {
-      localStorage.removeItem('todos')
-      localStorage.setItem('todos', JSON.stringify(this.todos))
+    changeStatus (id) {
+      let changedStatusTodo = this.todos.find(t => t.id == id)
+      changedStatusTodo.completed = !changedStatusTodo.completed
+      api.saveTodo(changedStatusTodo)
     },
     loadTodos () {
-      return JSON.parse(localStorage.getItem('todos'))
+      return api.getTodos()
     }
   },
   computed: {
@@ -60,10 +64,11 @@ export default {
   },
   mounted () {
     if (this.loadTodos())
-      this.todos = this.loadTodos()
+      this.loadTodos().then(todos => this.todos = todos)
   },
   updated () {
-    this.saveTodos()
+    if (this.loadTodos())
+      this.loadTodos().then(todos => this.todos = todos)
   }
 }
 </script>
