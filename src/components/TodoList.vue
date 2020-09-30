@@ -6,6 +6,7 @@
       :key="todo.id"
       :index="idx"
       @remove-item="$emit('remove-todo', todo.id)"
+      @change-status="$emit('change-status', todo.id)"
     />
   </ul>
 </template>
