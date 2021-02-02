@@ -67,6 +67,7 @@ input {
   display: flex;
   justify-content: start;
   align-items: center;
+  text-align: left;
 }
 .checkbox {
   margin-right: 1rem;
